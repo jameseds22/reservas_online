@@ -11,9 +11,6 @@ class inicioControlador extends help
     public function default($p) {
         $this->getFile('inicio/inicio.php',$p);
     }
-    public function busqueda($p) {
-        $this->getFile('busqueda/busqueda.php',$p);
-    } 
 
     public function valid_ingreso($p) 
     {

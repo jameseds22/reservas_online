@@ -8,7 +8,7 @@ class busquedaControlador extends help
         $this->core_ses();
         $this->Modelo = new busquedaModelo();
     }
-    public function busqueda($p) {
+    public function default($p) {
         $this->getFile('busqueda/busqueda.php',$p);
     } 
 

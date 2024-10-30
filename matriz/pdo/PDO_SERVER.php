@@ -24,13 +24,16 @@ class PDO_SERVER
 		$port = $login['port'];
 		$this->SP = array();
 
-		$this->PDO = new PDO("mysql:host=$host;port=$port;dbname=$dbname",
-				"$user",
-				"$pass",
-				array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-					//PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") mysql 7.4
-					1002 => "SET NAMES utf8") //mysql 8.1
-				);
+		try {
+			$this->PDO = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $pass, array(
+				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+				1002 => "SET NAMES utf8"
+			));
+		} catch (PDOException $e) {
+			// Handle connection errors gracefully
+			echo "Connection failed: " . $e->getMessage();
+			exit;
+		}
 	}
  
 	public function SP_type($v,$type){
