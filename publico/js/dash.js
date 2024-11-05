@@ -1,3 +1,150 @@
+admin = {
+    init:function(){
+        admin.button_desplie_menu();
+        admin.grafica_01_ingre_x_emple();
+        admin.grafica_02_num_reser_x_cede();
+        admin.grafica_03_num_reser_x_cede();
+    },
+    button_desplie_menu:function(){
+        $('.sidebar-toggler').click(function () {
+            $('.sidebar, .content').toggleClass("open");
+            return false;
+        });
+    },
+    grafica_01_ingre_x_emple:function(){
+        const ctx = document.getElementById('rep_ingres_sol_empl').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar', // Tipo de gráfico (barra)
+            data: {
+                labels: ['Juan', 'Luis', 'Rudy', 'Alonso', 'Gabriel', 'Elias'],
+                datasets: [{
+                    label: 'Ingresos en Soles por empleado',
+                    data: [324, 519, 363, 655, 452, 273],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1 // Grosor de los bordes de las barras
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // La escala comienza en cero
+                    }
+                },
+                responsive: true, // Hacer el gráfico responsive
+                plugins: {
+                    legend: {
+                        position: 'top' // Posición de la leyenda
+                    },
+                    tooltip: {
+                        enabled: true // Mostrar tooltip al pasar el mouse
+                    }
+                }
+            }
+        });
+    },
+    grafica_02_num_reser_x_cede:function(){
+        const ctx = document.getElementById('num_reserv_x_cede').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['cede1', 'cede2', 'cede3'],
+                datasets: [{
+                    label: 'Ingresos en Soles por empleado',
+                    data: [2324, 2519, 2363],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1 // Grosor de los bordes de las barras
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // La escala comienza en cero
+                    }
+                },
+                responsive: true, // Hacer el gráfico responsive
+                plugins: {
+                    legend: {
+                        position: 'left' // Posición de la leyenda
+                    },
+                    tooltip: {
+                        enabled: true // Mostrar tooltip al pasar el mouse
+                    }
+                }
+            }
+        });
+    },
+    grafica_03_num_reser_x_cede:function(){
+        const ctx = document.getElementById('num_ingres_x_cede').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['cede1', 'cede2', 'cede3'],
+                datasets: [{
+                    label: 'Ingresos en Soles por empleado',
+                    data: [2324, 2519, 2363],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1 // Grosor de los bordes de las barras
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // La escala comienza en cero
+                    }
+                },
+                responsive: true, // Hacer el gráfico responsive
+                plugins: {
+                    legend: {
+                        position: 'left' // Posición de la leyenda
+                    },
+                    tooltip: {
+                        enabled: true // Mostrar tooltip al pasar el mouse
+                    }
+                }
+            }
+        });
+    }
+
+
+}
+$(document).ready(function() {
+    admin.init();
+});
+
+
 (function ($) {
     "use strict";
 
@@ -26,7 +173,6 @@
     });
 
 
-    // Sidebar Toggler
     $('.sidebar-toggler').click(function () {
         $('.sidebar, .content').toggleClass("open");
         return false;

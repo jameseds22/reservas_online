@@ -1,7 +1,7 @@
 <div class="container">
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
         <div class="carousel-inner position-relative">
-            <div class="container position-absolute z-1 h-100 ">
+            <div class="container position-absolute z-1 h-100" style="background: #000000ad;">
                 <div class="carousel-caption text-start">
                     <form class="busqueda_servicios">
                         <h3 class="text-center">Filtros</h3>
@@ -32,13 +32,13 @@
                 </div>
             </div>
             <div class="carousel-item active h_carusel_inicio">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                <img src="/img/flayer/flayer_carrusel1.jpeg" width="100%" height="100%" alt="">
             </div>
             <div class="carousel-item h_carusel_inicio">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                <img src="/img/flayer/flayer_carrusel2.jpeg" width="100%" height="100%" alt="">
             </div>
             <div class="carousel-item h_carusel_inicio">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                <img src="/img/flayer/flayer_carrusel3.jpg" width="100%" height="100%" alt="">
             </div>
         </div>
         <button class="carousel-control-prev z-2" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
