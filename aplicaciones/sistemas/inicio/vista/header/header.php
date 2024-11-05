@@ -139,12 +139,11 @@ if (strpos($_SERVER['REQUEST_URI'], '/administracion') === false) {
                 <div class="navbar-nav w-100">
                     <a href="/administracion/dashboard" class="nav-item nav-link"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
                     
-                    <a href="/administracion/reportes" class="nav-item nav-link"><i class="bi bi-journal-check me-2"></i>Reportes</a>
                     <a href="/administracion/clientes" class="nav-item nav-link"><i class="bi bi-people me-2"></i>Clientes</a>
-                    <a href="/administracion/reservas" class="nav-item nav-link"><i class="bi bi-calendar-check me-2"></i>Reservas</a>
+                    <a href="/administracion/reservas" class="nav-item nav-link"><i class="bi bi-calendar-check me-2"></i>Cede</a>
                     <a href="/administracion/empleados" class="nav-item nav-link"><i class="fa bi-people me-2"></i>Empleados</a>
                     <a href="/administracion/permisos" class="nav-item nav-link"><i class="bi bi-bookmark-check-fill me-2"></i>Permisos</a>
-
+                    <!-- <a href="/administracion/reportes" class="nav-item nav-link"><i class="bi bi-journal-check me-2"></i>Reportes</a> -->
                 </div>
             </nav>
         </div>
