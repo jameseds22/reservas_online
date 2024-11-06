@@ -1,3 +1,11 @@
+<?php
+    $lit_dis = $this->get_distritos($p);
+    
+    $lit_serv = $this->get_servicios($p);
+    
+    $establecim = $this->buscar_establecimientos(array('vp_id_servicio'=>0, 'vp_id_distrito'=>0));
+
+?>
 <div class="container">
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
         <div class="carousel-inner position-relative">
@@ -5,28 +13,35 @@
                 <div class="carousel-caption text-start">
                     <form class="busqueda_servicios">
                         <h3 class="text-center">Filtros</h3>
-                        <div class="d-flex justify-content-evenly">
+                        <div class="d-flex justify-content-evenly align-items-center">
+
                             <div class="form-floating">
-                                <select class="form-select" id="categiri_serv" aria-label="Floating label select example">
-                                    <option selected>Seleccione un Servicio</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <select class="form-select" id="bucar_distrito_estable" aria-label="Floating label select example">
+                                    <option value="0" selected>Todos</option>
+                                    <?php
+                                        $lit_dis = $lit_dis['data'];
+                                        foreach($lit_dis as $key => $v){
+                                            echo '<option value="'.$v['id_distritos'].'">'.$v['distrito'].'</option>';
+                                        }
+                                    ?>
                                 </select>
-                                <label for="categiri_serv">Servicios</label>
+                                <label for="bucar_distrito_estable">Distrito</label>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="selec_fecha" placeholder="Fecha">
-                                <label for="selec_fecha">Fecha</label>
+                            <div class="form-floating">
+                                <select class="form-select" id="bucar_servicio_estable" aria-label="Floating label select example">
+                                    <option value="0" selected>Todos</option>
+                                    <?php
+                                        $lit_serv = $lit_serv['data'];
+                                        foreach($lit_serv as $key => $v){
+                                            echo '<option value="'.$v['id_servicios'].'">'.$v['nom_servicio'].'</option>';
+                                        }
+                                    ?>
+                                </select>
+                                <label for="bucar_servicio_estable">Servicios</label>
                             </div>
-                            <div class="star-rating text_color_amarillo" id="starRating">
-                                <i class="bi bi-star" data-value="1"></i>
-                                <i class="bi bi-star" data-value="2"></i>
-                                <i class="bi bi-star" data-value="3"></i>
-                                <i class="bi bi-star" data-value="4"></i>
-                                <i class="bi bi-star" data-value="5"></i>
+                            <div class="form-floating">
+                                <button class="bg_negro_web_hover px-2 py-1 bi bi-search rounded-pill border-0" id="buscar_establecimientos" type="button">Buscar</button>
                             </div>
-                           
                         </div>
                     </form>
                 </div>
@@ -55,7 +70,7 @@
 <div class="container">
     <div class="text_color_balnco bg_negro_web rounded-4 d-flex justify-content-between p-3 my-2">
         <div>
-            # Servicios Encontrados
+            Cantidad de Establecimientos <b class="num_establecimientos"><?php echo $establecim['total'];?></b>
         </div>
         <div>
 
@@ -65,34 +80,12 @@
 
 
 <div class="container actualizar_lista_Serv">
-    <div class="row m-0 row-cols-3">
-        
-        <a href="/inicio/establecimiento" class="p-1 text-decoration-none">
-            <div class="rounded-5 bg_verde02_web p-3 pb-0 text-center overflow-hidden">
-                <div class="my-3">
-                    <h2 class="display-5 text_color_negro">Nombre del Establecimiento</h2>
-                    <p class="lead text_color_negro">Dirección del Establecimiento.</p>
-                </div>
-                <div class="bg-body-tertiary shadow-sm mx-auto" style="height: 300px; border-radius: 21px 21px 0 0;">imagen</div>
-            </div>
-        </a>
-        <a href="#" class="p-1 text-decoration-none">
-            <div class="rounded-5 bg_verde02_web p-3 pb-0 text-center overflow-hidden">
-                <div class="my-3">
-                    <h2 class="display-5 text_color_negro">Nombre del Establecimiento</h2>
-                    <p class="lead text_color_negro">Dirección del Establecimiento.</p>
-                </div>
-                <div class="bg-body-tertiary shadow-sm mx-auto" style="height: 300px; border-radius: 21px 21px 0 0;">imagen</div>
-            </div>
-        </a>
-        <a href="#" class="p-1 text-decoration-none">
-            <div class="rounded-5 bg_verde02_web p-3 pb-0 text-center overflow-hidden">
-                <div class="my-3">
-                    <h2 class="display-5 text_color_negro">Nombre del Establecimiento</h2>
-                    <p class="lead text_color_negro">Dirección del Establecimiento.</p>
-                </div>
-                <div class="bg-body-tertiary shadow-sm mx-auto" style="height: 300px; border-radius: 21px 21px 0 0;">imagen</div>
-            </div>
-        </a>
+    <div id="cont_search_establecimient" class="row m-0 row-cols-3">
+        <?php
+            $establecim = $establecim['data'];
+            foreach($establecim as $key => $v){
+                echo $this->construc_establecimineto($v);
+            }
+        ?>
     </div>
 </div>

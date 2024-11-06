@@ -1,9 +1,11 @@
-<div class="m-3">
-    <h1 class="text-center">Dashboard</h1>
+<div class="p-3 bg_color_dash_1">
+    <h1 class="text-center px-2 bg_blanco_trans rounded-pill">Dashboard</h1>
     <div class="row m-0 row-cols-2">
         <!-- muestra ingresos dia semanales mensual -->
         <div class="p-1">
             <div class="bg_blanco_trans rounded-5 p-3">
+
+            
                 <ul class="nav nav-pills nav-fill gap-2 p-1 small bg_blanco_web rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-white); --bs-nav-pills-link-active-bg: var(--bs-black); --bs-nav-link-hover-color: var(--bs-black)">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link text_color_negro active rounded-5" id="dia-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Dia</button>

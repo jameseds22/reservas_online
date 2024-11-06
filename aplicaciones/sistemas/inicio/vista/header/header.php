@@ -50,19 +50,25 @@ if (strpos($_SERVER['REQUEST_URI'], '/administracion') === false) {
                 
                 <div class="collapse navbar-collapse justify-content-around" id="navbarTogglerDemo03">
                     <!-- menu de opciones  -->
-                    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg_verde02_web rounded-5 shadow-sm" id="pillNav2" role="tablist">
+                    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg_color_web_2 rounded-5 shadow-sm" id="pillNav2" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link text_color_balnco active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Inicio</button>
+                            <button class="nav-link text_color_balnco bg_color_web_3 rounded-5" type="button">Inicio</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link text_color_balnco rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Cortes</button>
+                            <button class="nav-link text_color_balnco rounded-5" type="button">Mas...</button>
                         </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link text_color_balnco rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Barba</button>
-                        </li>
+                        <?php
+                            if(ID_USR << 0){
+                        ?>
+                            <li class="nav-item" role="presentation">
+                                <a href="/inicio/mis_reservas" class="nav-link text_color_balnco rounded-5" type="button">Mis Reservas</a>
+                            </li>
+                        <?php
+                            }
+                        ?>
                     </ul>
                     <!-- menu usuario -->
-                    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg_verde02_web rounded-5 shadow-sm " id="pillNav2" role="tablist">
+                    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg_color_web_2 rounded-5 shadow-sm " id="pillNav2" role="tablist">
                         <?php
                             if(TIPO_USR != 1){
                         ?>
@@ -78,13 +84,13 @@ if (strpos($_SERVER['REQUEST_URI'], '/administracion') === false) {
                             <?php
                                 if(ID_USR == 0){
                             ?>
-                                    <button class="bi bi-person btn nav-link text_color_balnco active rounded-5 p-1" data-bs-toggle="modal" type="button" data-bs-target="#modalInicioReguistro"
+                                    <button class="bi bi-person btn nav-link text_color_balnco bg_color_web_3 rounded-5 p-1" data-bs-toggle="modal" type="button" data-bs-target="#modalInicioReguistro"
                                         style="font-size: 30px; line-height: 0;">
                                     </button>
                             <?php
                                 } else {
                             ?>
-                                    <button class="bi bi-person btn nav-link text_color_balnco active rounded-5 p-1" data-bs-toggle="tab" type="button" role="tab" aria-selected="true"
+                                    <button class="bi bi-person btn nav-link text_color_balnco bg_color_web_3 rounded-5 p-1" data-bs-toggle="tab" type="button" role="tab" aria-selected="true"
                                         style="font-size: 30px; line-height: 0;">
                                     </button>
 
@@ -122,10 +128,10 @@ if (strpos($_SERVER['REQUEST_URI'], '/administracion') === false) {
         </div>
         <!-- Spinner fin -->
 
-        <div class="sidebar pe-4 pb-3 bg_gris01_web">
+        <div class="sidebar pe-4 pb-3 bg_color_web_4">
             <nav class="navbar navbar-light">
-                <a href="/" class="navbar-brand mx-4 mb-3">
-                    <h3 class=""><i class="fa fa-hashtag me-2"></i>PIOLARDO</h3>
+                <a class="navbar-brand p-0 mx-4" href="/">
+                    <img src="/img/logo/logo1.svg" alt="" style="height: 50px;">
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -137,12 +143,12 @@ if (strpos($_SERVER['REQUEST_URI'], '/administracion') === false) {
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="/administracion/dashboard" class="nav-item nav-link"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+                    <a href="/administracion/dashboard" class="bg_color_dash_1 my-2 nav-item nav-link"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
                     
-                    <a href="/administracion/clientes" class="nav-item nav-link"><i class="bi bi-people me-2"></i>Clientes</a>
-                    <a href="/administracion/reservas" class="nav-item nav-link"><i class="bi bi-calendar-check me-2"></i>Cede</a>
-                    <a href="/administracion/empleados" class="nav-item nav-link"><i class="fa bi-people me-2"></i>Empleados</a>
-                    <a href="/administracion/permisos" class="nav-item nav-link"><i class="bi bi-bookmark-check-fill me-2"></i>Permisos</a>
+                    <a href="/administracion/clientes" class="bg_color_dash_2 my-2 nav-item nav-link"><i class="bi bi-people me-2"></i>Clientes</a>
+                    <a href="/administracion/reservas" class="bg_color_dash_3 my-2 nav-item nav-link"><i class="bi bi-calendar-check me-2"></i>Cede</a>
+                    <a href="/administracion/empleados" class="bg_color_dash_4 my-2 nav-item nav-link"><i class="fa bi-people me-2"></i>Empleados</a>
+                    <a href="/administracion/permisos" class="bg_color_dash_5 my-2 nav-item nav-link"><i class="bi bi-bookmark-check-fill me-2"></i>Permisos</a>
                     <!-- <a href="/administracion/reportes" class="nav-item nav-link"><i class="bi bi-journal-check me-2"></i>Reportes</a> -->
                 </div>
             </nav>
@@ -151,17 +157,17 @@ if (strpos($_SERVER['REQUEST_URI'], '/administracion') === false) {
 
         <div class="content bg_verde02_web">
 
-            <nav class="navbar navbar-expand bg_gris01_web navbar-light sticky-top px-4 py-0">
+            <nav class="navbar navbar-expand bg_color_web_4 navbar-light sticky-top px-4 py-0">
                 <a href="" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
-                <a href="#" class="sidebar-toggler text_color_negro rounded-circle justify-content-center bg_amarillo_web flex-shrink-0">
+                <a href="#" class="sidebar-toggler text_color_negro rounded-circle justify-content-center bg_blanco_web flex-shrink-0">
                     <i class="bi bi-list"></i>
                 </a>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="bi bi-bell-fill text_color_negro rounded-circle justify-content-center"></i>
+                            <i class="bi bi-bell-fill text_color_negro rounded-circle bg_blanco_web justify-content-center"></i>
                             <span class="d-none d-lg-inline-flex">Notificaciones</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -188,13 +194,11 @@ if (strpos($_SERVER['REQUEST_URI'], '/administracion') === false) {
 <?php    
 }
 if(strpos($_SERVER['REQUEST_URI'], '/administracion') === false){
-    echo '<body class="bg_verde01_web">';
+    echo '<body class="bg_color_web_1">';
 }else {
     echo '<body class="bg_verde02_web">';
 }
-?>
-<body class="bg_verde02_web">
-            <!-- Blank Start -->
+?>            <!-- Blank Start -->
             <!-- <div class="container-fluid pt-4 px-4">
                 <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
                     <div class="col-md-6 text-center">
